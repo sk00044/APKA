@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #efefef;
+}
+
+/* TOP BAR */
+.topbar {
+  background: #4c5bdc;
+  color: white;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.topbar h1 {
+  font-size: 20px;
+}
+
+.menu {
+  font-size: 26px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* SIDEBAR */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: #bdbdbd;
+  transition: 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* SIDEBAR TOP */
+.sidebar-header {
+  background: #ff5252;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-circle {
+  width: 70px;
+  height: 70px;
+  background: #4caf50;
+  border-radius: 50%;
+}
+
+/* SIDEBAR LINKS */
+.sidebar-links {
+  padding: 20px;
+  flex: 1;
+}
+
+.sidebar-links a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* SIDEBAR FOOTER */
+.sidebar-footer {
+  padding: 20px;
+}
+
+.admin-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff8a80;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 900;
+}
+
+/* MAIN CONTENT */
+.container {
+  padding: 20px;
+}
+
+/* NEW STOCK BUTTON */
+.new-stock {
+  background: #ff5252;
+  color: #00e676;
+  font-size: 26px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 50px;
+  margin-bottom: 25px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* BRAND BOX */
+.brand {
+  background: #dcdcdc;
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+.brand img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* SAMPLE BUTTON */
+.sample-btn {
+  margin-top: 30px;
+  background: #4cd964;
+  color: white;
+  font-size: 22px;
+  text-align: center;
+  padding: 18px;
+  border-radius: 60px;
+}
