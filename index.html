@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A-one tailors & vastralya</title>
+  <title>A-one tailors & vestralya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- TOP BAR -->
 <header class="topbar">
   <div class="menu" onclick="openMenu()">☰</div>
-  <h1>A-one tailors & vastralya</h1>
+  <h1>A-one tailors & vestralya</h1>
 </header>
 
 <!-- SIDE MENU -->
@@ -26,34 +25,23 @@
   </div>
 
   <div class="sidebar-footer">
-    <button class="admin-btn">Admin mode</button>
+    <button class="admin-btn" onclick="adminLogin()">Admin mode</button>
+    <button class="reset-btn" onclick="showReset()">Forgot password?</button>
   </div>
 </div>
 
-<!-- OVERLAY -->
 <div id="overlay" onclick="closeMenu()"></div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div class="container">
 
   <div class="new-stock">New stock</div>
 
   <div class="grid">
-    <div class="brand">
-      <img src="raymond.png" alt="Raymond">
-    </div>
-
-    <div class="brand">
-      <img src="siyarams.jpg" alt="Siyarams">
-    </div>
-
-    <div class="brand">
-      <img src="dj.png" alt="D & J">
-    </div>
-
-    <div class="brand">
-      <img src="arvind.png" alt="Arvind">
-    </div>
+    <div class="brand"><img src="raymond.png"></div>
+    <div class="brand"><img src="siyarams.jpg"></div>
+    <div class="brand"><img src="dj.png"></div>
+    <div class="brand"><img src="arvind.png"></div>
   </div>
 
   <div class="sample-btn">
@@ -64,4 +52,4 @@
 
 <script src="script.js"></script>
 </body>
-</html>
+                         </html>
