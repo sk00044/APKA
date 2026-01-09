@@ -2,80 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A-one Tailors & Vastralya</title>
+  <title>A-one tailors & vastralya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#4f63d8">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- App icon (for browser / PWA / app) -->
+  <link rel="icon" href="a_one_tailors_offical_14041020_131141123.jpg">
 </head>
+
 <body>
 
-<!-- TOP BAR -->
-<header class="topbar">
-  <div class="menu" onclick="openMenu()">☰</div>
-  <h1>A-one tailors & vastralya</h1>
-</header>
+  <!-- ===== TOP BAR ===== -->
+  <header class="topbar">
+    <div class="menu" onclick="openMenu()">☰</div>
 
-<!-- SIDE MENU -->
-<div id="sidebar">
-  <div class="sidebar-header">
-    <div class="profile-circle"></div>
-  </div>
+    <img
+      src="a_one_tailors_offical_14041020_131141123.jpg"
+      alt="A-One Tailors Logo"
+      class="app-logo"
+    >
 
-  <a href="#">About</a>
-  <a href="#">Contact</a>
+    <h1>A-one tailors & vastralya</h1>
+  </header>
 
-  <div class="sidebar-footer">
-    <button class="admin-btn" onclick="adminLogin()">Admin mode</button>
-    <button class="reset-btn" onclick="forgotPassword()">Forgot password</button>
-  </div>
-</div>
-
-<!-- OVERLAY -->
-<div id="overlay" onclick="closeMenu()"></div>
-
-<!-- MAIN CONTENT -->
-<div class="container">
-
-  <div class="new-stock">New stock</div>
-
-  <div class="grid">
-    <div class="brand">
-      <img src="raymond.png" alt="Raymond">
+  <!-- ===== SIDE MENU ===== -->
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <img
+        src="a_one_tailors_offical_14041020_131141123.jpg"
+        class="sidebar-logo"
+        alt="Logo"
+      >
     </div>
 
-    <div class="brand">
-      <img src="siyarams.jpg" alt="Siyaram">
-    </div>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
 
-    <div class="brand">
-      <img src="dj.png" alt="D & J">
-    </div>
-
-    <div class="brand">
-      <img src="arvind.png" alt="Arvind">
+    <div class="sidebar-footer">
+      <button class="admin-btn" onclick="adminLogin()">Admin mode</button>
+      <button class="forgot-btn" onclick="forgotPassword()">Forgot password</button>
     </div>
   </div>
 
-  <div class="sample-btn">
-    Coat & Sherwani <br>(Samples)
+  <!-- overlay -->
+  <div id="overlay" onclick="closeMenu()"></div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="container">
+
+    <div class="new-stock">New stock</div>
+
+    <div class="grid">
+
+      <div class="brand">
+        <img src="raymond.png" alt="Raymond">
+      </div>
+
+      <div class="brand">
+        <img src="siyarams.jpg" alt="Siyarams">
+      </div>
+
+      <div class="brand">
+        <img src="dj.png" alt="D & J">
+      </div>
+
+      <div class="brand">
+        <img src="arvind.png" alt="Arvind">
+      </div>
+
+    </div>
+
+    <div class="sample-btn">
+      Coat & Sherwani <br>(Samples)
+    </div>
+
   </div>
 
-</div>
-
-<!-- JS -->
-<script src="script.js"></script>
-
-<!-- SERVICE WORKER -->
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
+  <!-- JS -->
+  <script src="script.js"></script>
 
 </body>
 </html>
