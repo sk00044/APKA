@@ -140,3 +140,30 @@ body {
   border-radius: 50px;
   font-size: 22px;
 }
+/* ===== LOGO GREY BOX FINAL FIX ===== */
+
+/* container ka background neutral */
+.container {
+  background: transparent !important;
+}
+
+/* grid khud koi background na de */
+.grid {
+  background: transparent !important;
+}
+
+/* brand wrapper ko invisible bana do */
+.brand {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+/* image bilkul clean */
+.brand img {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  display: block;
+}
