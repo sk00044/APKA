@@ -5,13 +5,12 @@ function openMenu() {
   document.getElementById("sidebar").style.left = "0";
   document.getElementById("overlay").style.display = "block";
 }
-
 function closeMenu() {
   document.getElementById("sidebar").style.left = "-280px";
   document.getElementById("overlay").style.display = "none";
 }
 
-/* ADMIN LOGIN */
+/* ADMIN */
 function adminLogin() {
   const pass = prompt("Enter admin password");
   if (pass === ADMIN_PASSWORD) {
@@ -24,8 +23,8 @@ function adminLogin() {
 /* FORGOT PASSWORD */
 function showReset() {
   const choice = prompt(
-    "Password reset option:\n\n" +
-    "1️⃣ Old password se reset\n" +
+    "Password reset method:\n\n" +
+    "1️⃣ Old password\n" +
     "2️⃣ Another method (OTP)\n\n" +
     "1 ya 2 likhiye"
   );
@@ -33,7 +32,7 @@ function showReset() {
   if (choice === "1") {
     resetWithOld();
   } else if (choice === "2") {
-    otpInfo();
+    otpMessage();
   }
 }
 
@@ -51,9 +50,11 @@ function resetWithOld() {
   }
 }
 
-/* METHOD 2 – INFO ONLY (Static site limit) */
-function otpInfo() {
+/* METHOD 2 (STATIC LIMIT) */
+function otpMessage() {
   alert(
+    "OTP reset (Another Method)\n\n" +
+    "Is website par direct OTP possible nahi hai.\n\n" +
     "OTP lene ke liye owner se sampark kare:\n\n" +
     "+91 86768 15988\n" +
     "+91 95762 21986\n\n" +
