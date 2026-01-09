@@ -21,45 +21,42 @@ function adminLogin() {
   }
 }
 
-/* RESET PASSWORD */
+/* FORGOT PASSWORD */
 function showReset() {
-  const option = prompt(
-    "Reset password:\n\n1. Using old password\n2. Another method (OTP)\n\nEnter 1 or 2"
+  const choice = prompt(
+    "Password reset option:\n\n" +
+    "1️⃣ Old password se reset\n" +
+    "2️⃣ Another method (OTP)\n\n" +
+    "1 ya 2 likhiye"
   );
 
-  if (option === "1") resetWithOld();
-  if (option === "2") resetWithOTP();
+  if (choice === "1") {
+    resetWithOld();
+  } else if (choice === "2") {
+    otpInfo();
+  }
 }
 
 /* METHOD 1 */
 function resetWithOld() {
-  const oldPass = prompt("Enter old password");
+  const oldPass = prompt("Old password enter karo");
   if (oldPass === ADMIN_PASSWORD) {
-    const newPass = prompt("Enter new password");
+    const newPass = prompt("New password enter karo");
     if (newPass) {
       ADMIN_PASSWORD = newPass;
-      alert("Password changed successfully");
+      alert("Password successfully changed");
     }
   } else {
-    alert("Old password incorrect");
+    alert("Old password galat hai");
   }
 }
 
-/* METHOD 2 (OTP DEMO) */
-function resetWithOTP() {
-  const phone = prompt("Enter your phone number");
-  if (!phone) return;
-
-  alert("OTP sent (demo)");
-
-  const otp = prompt("Enter OTP");
-  if (otp === "1234") {
-    const newPass = prompt("Enter new password");
-    if (newPass) {
-      ADMIN_PASSWORD = newPass;
-      alert("Password reset successful");
-    }
-  } else {
-    alert("Invalid OTP");
-  }
+/* METHOD 2 – INFO ONLY (Static site limit) */
+function otpInfo() {
+  alert(
+    "OTP lene ke liye owner se sampark kare:\n\n" +
+    "+91 86768 15988\n" +
+    "+91 95762 21986\n\n" +
+    "Only for admin use"
+  );
 }
