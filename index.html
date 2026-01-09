@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A-one tailors & vastralya</title>
+  <title>A-one Tailors & Vastralya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4f63d8">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,14 +26,12 @@
     <div class="profile-circle"></div>
   </div>
 
-  <div class="sidebar-links">
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
 
   <div class="sidebar-footer">
     <button class="admin-btn" onclick="adminLogin()">Admin mode</button>
-    <button class="reset-btn" onclick="showReset()">Forgot password</button>
+    <button class="reset-btn" onclick="forgotPassword()">Forgot password</button>
   </div>
 </div>
 
@@ -45,7 +49,7 @@
     </div>
 
     <div class="brand">
-      <img src="siyarams.jpg" alt="Siyarams">
+      <img src="siyarams.jpg" alt="Siyaram">
     </div>
 
     <div class="brand">
@@ -63,6 +67,15 @@
 
 </div>
 
+<!-- JS -->
 <script src="script.js"></script>
+
+<!-- SERVICE WORKER -->
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
 </body>
-        </html>
+</html>
