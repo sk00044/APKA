@@ -1,7 +1,7 @@
 {
   "name": "A-one Tailors & Vastralya",
   "short_name": "A-one Tailors",
-  "start_url": "/APKA/",
+  "start_url": "/APKA/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f63d8",
