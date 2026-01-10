@@ -7,7 +7,7 @@
   "theme_color": "#4f63d8",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "/APKA/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
