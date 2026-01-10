@@ -2,86 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A-One Tailors & Vastralya</title>
+  <title>A-one Tailors & Vastralya</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4f63d8">
+
+  <!-- ICONS -->
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- App / PWA Icon -->
-  <link rel="icon" type="image/png" href="icon.png">
-  <link rel="apple-touch-icon" href="icon.png">
 </head>
 
 <body>
 
   <!-- ===== TOP BAR ===== -->
   <header class="topbar">
-    <div class="menu" onclick="openMenu()">☰</div>
+    <div class="menu-btn" onclick="openMenu()">☰</div>
 
-    <img
-      src="icon.png"
-      alt="A-One Tailors Logo"
-      class="app-logo"
-    >
+    <img src="icon.png" alt="A-one Tailors Logo" class="app-logo">
 
-    <h1>A-One Tailors & Vastralya</h1>
+    <span class="app-title">A-one tailors & vastralya</span>
   </header>
 
-  <!-- ===== SIDE MENU ===== -->
+  <!-- ===== SIDEBAR ===== -->
   <div id="sidebar">
-
     <div class="sidebar-header">
-      <img
-        src="icon.png"
-        alt="Logo"
-        class="sidebar-logo"
-      >
+      <img src="icon.png" class="sidebar-logo" alt="Logo">
     </div>
 
     <a href="#">About</a>
     <a href="#">Contact</a>
 
     <div class="sidebar-footer">
-      <button class="admin-btn" onclick="adminLogin()">Admin mode</button>
-      <button class="forgot-btn" onclick="forgotPassword()">Forgot password</button>
+      <button onclick="adminLogin()">Admin mode</button>
+      <button onclick="forgotPassword()">Forgot password</button>
     </div>
-
   </div>
 
-  <!-- Overlay -->
+  <!-- overlay -->
   <div id="overlay" onclick="closeMenu()"></div>
 
   <!-- ===== MAIN CONTENT ===== -->
-  <div class="container">
+  <main class="container">
 
-    <div class="new-stock">New stock</div>
+    <div class="new-stock">New Stock</div>
 
     <div class="grid">
-
-      <div class="brand">
-        <img src="raymond.png" alt="Raymond">
-      </div>
-
-      <div class="brand">
-        <img src="siyarams.jpg" alt="Siyarams">
-      </div>
-
-      <div class="brand">
-        <img src="dj.png" alt="D & J">
-      </div>
-
-      <div class="brand">
-        <img src="arvind.png" alt="Arvind">
-      </div>
-
+      <div class="brand"><img src="raymond.png" alt="Raymond"></div>
+      <div class="brand"><img src="siyarams.jpg" alt="Siyarams"></div>
+      <div class="brand"><img src="dj.png" alt="D & J"></div>
+      <div class="brand"><img src="arvind.png" alt="Arvind"></div>
     </div>
 
     <div class="sample-btn">
-      Coat & Sherwani <br>(Samples)
+      Coat & Sherwani<br>(Samples)
     </div>
 
-  </div>
+  </main>
+
+  <!-- ===== SERVICE WORKER ===== -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 
   <!-- JS -->
   <script src="script.js"></script>
