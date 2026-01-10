@@ -2,34 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A-one Tailors & Vastralya</title>
-
+  <title>A-One Tailors & Vastralya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#4f63d8">
-
-  <!-- ICONS -->
+  <!-- App Icon -->
   <link rel="icon" href="icon.png">
-  <link rel="apple-touch-icon" href="icon.png">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- ===== FIREBASE SDK (SCRIPT TAG METHOD) ===== -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyXXXXXXXXXXXX",
+      authDomain: "a-one-tailors-admin.firebaseapp.com",
+      projectId: "a-one-tailors-admin",
+      storageBucket: "a-one-tailors-admin.appspot.com",
+      messagingSenderId: "934999331654",
+      appId: "1:934999331654:web:XXXXXXXX"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <!-- ===== FIREBASE END ===== -->
+
 </head>
 
 <body>
 
   <!-- ===== TOP BAR ===== -->
   <header class="topbar">
-    <div class="menu-btn" onclick="openMenu()">☰</div>
+    <div class="menu" onclick="openMenu()">☰</div>
 
-    <img src="icon.png" alt="A-one Tailors Logo" class="app-logo">
+    <img src="icon.png" class="app-logo" alt="A-One Logo">
 
-    <span class="app-title">A-one tailors & vastralya</span>
+    <h1>A-One Tailors & Vastralya</h1>
   </header>
 
-  <!-- ===== SIDEBAR ===== -->
+  <!-- ===== SIDE MENU ===== -->
   <div id="sidebar">
     <div class="sidebar-header">
       <img src="icon.png" class="sidebar-logo" alt="Logo">
@@ -39,12 +53,11 @@
     <a href="#">Contact</a>
 
     <div class="sidebar-footer">
-      <button onclick="adminLogin()">Admin mode</button>
-      <button onclick="forgotPassword()">Forgot password</button>
+      <button onclick="adminLogin()" class="admin-btn">Admin Mode</button>
+      <button onclick="forgotPassword()" class="forgot-btn">Forgot Password</button>
     </div>
   </div>
 
-  <!-- overlay -->
   <div id="overlay" onclick="closeMenu()"></div>
 
   <!-- ===== MAIN CONTENT ===== -->
@@ -53,26 +66,19 @@
     <div class="new-stock">New Stock</div>
 
     <div class="grid">
-      <div class="brand"><img src="raymond.png" alt="Raymond"></div>
-      <div class="brand"><img src="siyarams.jpg" alt="Siyarams"></div>
-      <div class="brand"><img src="dj.png" alt="D & J"></div>
-      <div class="brand"><img src="arvind.png" alt="Arvind"></div>
+      <div class="brand"><img src="raymond.png"></div>
+      <div class="brand"><img src="siyarams.jpg"></div>
+      <div class="brand"><img src="dj.png"></div>
+      <div class="brand"><img src="arvind.png"></div>
     </div>
 
     <div class="sample-btn">
-      Coat & Sherwani<br>(Samples)
+      Coat & Sherwani <br>(Samples)
     </div>
 
   </main>
 
-  <!-- ===== SERVICE WORKER ===== -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("service-worker.js");
-    }
-  </script>
-
-  <!-- JS -->
+  <!-- ===== JS ===== -->
   <script src="script.js"></script>
 
 </body>
