@@ -2,16 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A-One Tailors & Vastralya</title>
+  <title>Admin Panel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- App Icon -->
-  <link rel="icon" href="icon.png">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- ===== FIREBASE (AUTH ONLY) ===== -->
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
@@ -26,58 +20,30 @@
 
     firebase.initializeApp(firebaseConfig);
   </script>
-  <!-- ===== FIREBASE END ===== -->
 </head>
 
 <body>
 
-  <!-- ===== TOP BAR ===== -->
-  <header class="topbar">
-    <div class="menu" onclick="openMenu()">☰</div>
+<h2>Admin Panel</h2>
+<p>Only admin can see this page</p>
 
-    <img src="icon.png" class="app-logo" alt="A-One Logo">
+<button onclick="logout()">Logout</button>
 
-    <h1>A-One Tailors & Vastralya</h1>
-  </header>
+<script>
+  // 🔒 PROTECT ADMIN PAGE
+  firebase.auth().onAuthStateChanged(user => {
+    if (!user) {
+      alert("Unauthorized access!");
+      window.location.href = "index.html";
+    }
+  });
 
-  <!-- ===== SIDE MENU ===== -->
-  <div id="sidebar">
-    <div class="sidebar-header">
-      <img src="icon.png" class="sidebar-logo" alt="Logo">
-    </div>
-
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-
-    <div class="sidebar-footer">
-      <button class="admin-btn" onclick="adminLogin()">Admin Mode</button>
-      <button class="forgot-btn" onclick="forgotPassword()">Forgot Password</button>
-    </div>
-  </div>
-
-  <!-- Overlay -->
-  <div id="overlay" onclick="closeMenu()"></div>
-
-  <!-- ===== MAIN CONTENT ===== -->
-  <main class="container">
-
-    <div class="new-stock">New Stock</div>
-
-    <div class="grid">
-      <div class="brand"><img src="raymond.png" alt="Raymond"></div>
-      <div class="brand"><img src="siyarams.jpg" alt="Siyarams"></div>
-      <div class="brand"><img src="dj.png" alt="DJ"></div>
-      <div class="brand"><img src="arvind.png" alt="Arvind"></div>
-    </div>
-
-    <div class="sample-btn">
-      Coat & Sherwani <br>(Samples)
-    </div>
-
-  </main>
-
-  <!-- ===== JS ===== -->
-  <script src="script.js"></script>
+  function logout() {
+    firebase.auth().signOut().then(() => {
+      window.location.href = "index.html";
+    });
+  }
+</script>
 
 </body>
 </html>
