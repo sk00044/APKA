@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A-one tailors & vastralya</title>
+  <title>A-One Tailors & Vastralya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- App icon (for browser / PWA / app) -->
-  <link rel="icon" href="a_one_tailors_offical_14041020_131141123.jpg">
+  <!-- App / PWA Icon -->
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
 </head>
 
 <body>
@@ -19,21 +20,22 @@
     <div class="menu" onclick="openMenu()">☰</div>
 
     <img
-      src="a_one_tailors_offical_14041020_131141123.jpg"
+      src="icon.png"
       alt="A-One Tailors Logo"
       class="app-logo"
     >
 
-    <h1>A-one tailors & vastralya</h1>
+    <h1>A-One Tailors & Vastralya</h1>
   </header>
 
   <!-- ===== SIDE MENU ===== -->
   <div id="sidebar">
+
     <div class="sidebar-header">
       <img
-        src="a_one_tailors_offical_14041020_131141123.jpg"
-        class="sidebar-logo"
+        src="icon.png"
         alt="Logo"
+        class="sidebar-logo"
       >
     </div>
 
@@ -44,9 +46,10 @@
       <button class="admin-btn" onclick="adminLogin()">Admin mode</button>
       <button class="forgot-btn" onclick="forgotPassword()">Forgot password</button>
     </div>
+
   </div>
 
-  <!-- overlay -->
+  <!-- Overlay -->
   <div id="overlay" onclick="closeMenu()"></div>
 
   <!-- ===== MAIN CONTENT ===== -->
