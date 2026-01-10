@@ -1,63 +1,80 @@
-let ADMIN_PASSWORD = "Aone@2026";
-
-/* MENU */
+// ===============================
+// MENU OPEN / CLOSE
+// ===============================
 function openMenu() {
   document.getElementById("sidebar").style.left = "0";
   document.getElementById("overlay").style.display = "block";
 }
+
 function closeMenu() {
-  document.getElementById("sidebar").style.left = "-280px";
+  document.getElementById("sidebar").style.left = "-260px";
   document.getElementById("overlay").style.display = "none";
 }
 
-/* ADMIN */
+
+// ===============================
+// ADMIN LOGIN
+// ===============================
 function adminLogin() {
-  const pass = prompt("Enter admin password");
-  if (pass === ADMIN_PASSWORD) {
-    alert("Admin mode enabled");
+  const email = prompt("Admin Email:");
+  const password = prompt("Admin Password:");
+
+  if (!email || !password) {
+    alert("Email aur Password dono required hai");
+    return;
+  }
+
+  firebase.auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(() => {
+      alert("Admin login successful");
+      window.location.href = "admin.html";
+    })
+    .catch(error => {
+      alert(error.message);
+    });
+}
+
+
+// ===============================
+// FORGOT PASSWORD
+// ===============================
+function forgotPassword() {
+  const email = prompt("Registered Admin Email enter karo:");
+
+  if (!email) {
+    alert("Email required hai");
+    return;
+  }
+
+  firebase.auth()
+    .sendPasswordResetEmail(email)
+    .then(() => {
+      alert("Password reset email bhej diya gaya hai");
+    })
+    .catch(error => {
+      alert(error.message);
+    });
+}
+
+
+// ===============================
+// ADMIN STATE CHECK (INDEX PAGE)
+// ===============================
+firebase.auth().onAuthStateChanged(user => {
+  const adminBtn = document.querySelector(".admin-btn");
+
+  if (!adminBtn) return;
+
+  if (user) {
+    // Admin logged in
+    adminBtn.innerText = "Admin Panel";
+    adminBtn.onclick = () => {
+      window.location.href = "admin.html";
+    };
   } else {
-    alert("Wrong password");
+    // Not logged in
+    adminBtn.innerText = "Admin Mode";
+    adminBtn.onclick = adminLogin;
   }
-}
-
-/* FORGOT PASSWORD */
-function showReset() {
-  const choice = prompt(
-    "Password reset method:\n\n" +
-    "1️⃣ Old password\n" +
-    "2️⃣ Another method (OTP)\n\n" +
-    "1 ya 2 likhiye"
-  );
-
-  if (choice === "1") {
-    resetWithOld();
-  } else if (choice === "2") {
-    otpMessage();
-  }
-}
-
-/* METHOD 1 */
-function resetWithOld() {
-  const oldPass = prompt("Old password enter karo");
-  if (oldPass === ADMIN_PASSWORD) {
-    const newPass = prompt("New password enter karo");
-    if (newPass) {
-      ADMIN_PASSWORD = newPass;
-      alert("Password successfully changed");
-    }
-  } else {
-    alert("Old password galat hai");
-  }
-}
-
-/* METHOD 2 (STATIC LIMIT) */
-function otpMessage() {
-  alert(
-    "OTP reset (Another Method)\n\n" +
-    "Is website par direct OTP possible nahi hai.\n\n" +
-    "OTP lene ke liye owner se sampark kare:\n\n" +
-    "+91 86768 15988\n" +
-    "+91 95762 21986\n\n" +
-    "Only for admin use"
-  );
-}
+});
